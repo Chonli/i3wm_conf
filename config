@@ -223,8 +223,8 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/Images/S
 bar {
 	#output           LVDS1
     #status_command i3status -c ~/.i3/i3status.config
-    #status_command $HOME/bin/i3bar-conky
-	status_command conky -c ~/.i3/i3bar-conky.conf
+    status_command ~/.i3/i3-conky-initscript.sh
+	#status_command conky -c ~/.i3/i3bar-conky.conf
 	position	top	
 	workspace_buttons yes
     tray_output       primary
