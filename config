@@ -247,11 +247,14 @@ bar {
 
 # Run parcellite when starting
 exec --no-startup-id parcellite
+exec --no-startup-id feh --bg-scale ~/.i3/fond.jpg
+exec --no-startup-id compton -b
+
+
 #exec --no-startup-id synapse
 #exec --no-startup-id guake
-exec nitrogen --restore
+#exec nitrogen --restore
 #exec xcompmgr -c -f -n
-exec --no-startup-id compton -b
 #-f -c --config ~/.compton.conf
 
 
