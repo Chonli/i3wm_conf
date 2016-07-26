@@ -204,15 +204,18 @@ bindsym $mod+r mode "resize"
 
 # Multimedia Keys
 # # increase volume
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioRaiseVolume exec "amixer -q set Master 5%+ unmute"
 # # decrease volume
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioLowerVolume exec "amixer -q set Master 5%- unmute"
 # # mute volume
-bindsym XF86AudioMute exec amixer -q set Master mute
+bindsym XF86AudioMute exec "amixer -q set Master mute"
 # # pause / play / next / previous
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
+
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 2"
 
 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Images/Screenshots'
 bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/Images/Screenshots'
@@ -245,7 +248,7 @@ bar {
 # Run parcellite when starting
 exec --no-startup-id parcellite
 #exec --no-startup-id synapse
-exec --no-startup-id guake
+#exec --no-startup-id guake
 exec nitrogen --restore
 #exec xcompmgr -c -f -n
 exec --no-startup-id compton -b
