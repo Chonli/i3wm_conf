@@ -14,7 +14,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font pango: System San Francisco Display 8
+font pango: System San Francisco Display 10
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
@@ -105,31 +105,54 @@ workspace $workspace8 output LVDS1
 workspace $workspace9 output LVDS1
 workspace $workspace10 output LVDS1
 
+# switch to workspace
+# bindsym $mod+ampersand workspace $workspace1
+# bindsym $mod+eacute workspace $workspace2
+# bindsym $mod+quotedbl workspace $workspace3
+# bindsym $mod+apostrophe workspace $workspace4
+# bindsym $mod+parenleft workspace $workspace5
+# bindsym $mod+minus workspace $workspace6
+# bindsym $mod+egrave workspace $workspace7
+# bindsym $mod+underscore workspace $workspace8
+# bindsym $mod+ccedilla workspace $workspace9
+# bindsym $mod+agrave workspace $workspace10
+#
+# # move focused container to workspace
+# bindsym $mod+Shift+ampersand move container to workspace $workspace1
+# bindsym $mod+Shift+eacute move container to workspace $workspace2
+# bindsym $mod+Shift+quotedbl move container to workspace $workspace3
+# bindsym $mod+Shift+apostrophe move container to workspace $workspace4
+# bindsym $mod+Shift+5 move container to workspace $workspace5
+# bindsym $mod+Shift+minus move container to workspace $workspace6
+# bindsym $mod+Shift+egrave move container to workspace $workspace7
+# bindsym $mod+Shift+underscore move container to workspace $workspace8
+# bindsym $mod+Shift+ccedilla move container to workspace $workspace9
+# bindsym $mod+Shift+agrave move container to workspace $workspace10
+#
 
 # switch to workspace
-bindsym $mod+ampersand workspace $workspace1
-bindsym $mod+eacute workspace $workspace2
-bindsym $mod+quotedbl workspace $workspace3
-bindsym $mod+apostrophe workspace $workspace4
-bindsym $mod+parenleft workspace $workspace5
-bindsym $mod+minus workspace $workspace6
-bindsym $mod+egrave workspace $workspace7
-bindsym $mod+underscore workspace $workspace8
-bindsym $mod+ccedilla workspace $workspace9
-bindsym $mod+agrave workspace $workspace10
+bindsym $mod+0x22 workspace $workspace1
+bindsym $mod+0xab workspace $workspace2
+bindsym $mod+0xbb workspace $workspace3
+bindsym $mod+0x28 workspace $workspace4
+bindsym $mod+0x29 workspace $workspace5
+bindsym $mod+0x40 workspace $workspace6
+bindsym $mod+0x2b workspace $workspace7
+bindsym $mod+0x2d workspace $workspace8
+bindsym $mod+0x2f workspace $workspace9
+bindsym $mod+0x2a workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace $workspace1
-bindsym $mod+Shift+eacute move container to workspace $workspace2
-bindsym $mod+Shift+quotedbl move container to workspace $workspace3
-bindsym $mod+Shift+apostrophe move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+minus move container to workspace $workspace6
-bindsym $mod+Shift+egrave move container to workspace $workspace7
-bindsym $mod+Shift+underscore move container to workspace $workspace8
-bindsym $mod+Shift+ccedilla move container to workspace $workspace9
-bindsym $mod+Shift+agrave move container to workspace $workspace10
-
+bindsym $mod+Shift+0x22 move container to workspace $workspace1
+bindsym $mod+Shift+0xab move container to workspace $workspace2
+bindsym $mod+Shift+0xbb move container to workspace $workspace3
+bindsym $mod+Shift+0x28 move container to workspace $workspace4
+bindsym $mod+Shift+0x29 move container to workspace $workspace5
+bindsym $mod+Shift+0x40 move container to workspace $workspace6
+bindsym $mod+Shift+0x2b move container to workspace $workspace7
+bindsym $mod+Shift+0x2d move container to workspace $workspace8
+bindsym $mod+Shift+0x2f move container to workspace $workspace9
+bindsym $mod+Shift+0x2a move container to workspace $workspace10
 
 #lancement auto de certain logiciel dans leur workspace
 assign [class="Firefox"] $workspace1
@@ -231,7 +254,7 @@ bar {
 	position	top	
 	workspace_buttons yes
     tray_output       primary
-    font pango: System San Francisco Display 9
+    font pango: System San Francisco Display 11
 	#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
     colors {
@@ -252,8 +275,8 @@ exec --no-startup-id compton -b
 
 
 #exec --no-startup-id synapse
-#exec --no-startup-id guake
-#exec nitrogen --restore
+exec --no-startup-id guake
+exec nitrogen --restore
 #exec xcompmgr -c -f -n
 #-f -c --config ~/.compton.conf
 
