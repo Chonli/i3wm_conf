@@ -22,14 +22,14 @@ font pango: System San Francisco Display 8
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 10
 
-set $workspace1 "1:web"
-set $workspace2 "2:dev"
-set $workspace3 "3:doc"
-set $workspace4 "4:shell"
-set $workspace5 "5:office"
-set $workspace6 "6:media"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
 set $workspace7 "7"
-set $workspace8 "8:jeu"
+set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10"
 
@@ -37,7 +37,8 @@ set $workspace10 "10"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec --no-startup-id i3-sensible-terminal
+#bindsym $mod+t exec --no-startup-id i3-sensible-terminal
+bindsym $mod+t exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -55,6 +56,8 @@ bindsym $mod+c exec rofi -show ssh
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+p move workspace to output right
 
 # change focus
 bindsym $mod+Left focus left
@@ -133,7 +136,6 @@ bindsym $mod+Shift+agrave move container to workspace $workspace10
 
 #lancement auto de certain logiciel dans leur workspace
 assign [class="Firefox"] $workspace1
-assign [class="Eclipse"] $workspace2
 assign [class="Lxterminal"] $workspace4
 assign [class="Nemo"] $workspace3
 assign [class="Pcmanfm"] $workspace3
@@ -144,7 +146,6 @@ assign [class="libreoffice-startcenter"] $workspace5
 assign [class="libreoffice-impress"] $workspace5
 assign [class="libreoffice-writer"] $workspace5
 assign [class="Htop"] $workspace9
-assign [class="Minetest"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -224,9 +225,9 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/Images/S
 # finds out, if available)
 #
 bar {
-	#output           LVDS1
+	#output           eDP1
     #status_command i3status -c ~/.i3/i3status.config
-    status_command ~/.i3/i3-conky-initscript.sh
+    status_command ~/.config/i3/i3-conky-initscript.sh
 	#status_command conky -c ~/.i3/i3bar-conky.conf
 	position	top	
 	workspace_buttons yes
@@ -247,9 +248,9 @@ bar {
 
 # Run parcellite when starting
 exec --no-startup-id parcellite
-exec --no-startup-id feh --bg-scale ~/.i3/fond.jpg
+exec --no-startup-id feh --bg-scale ~/.config/i3/fond.jpg
 exec --no-startup-id compton -b
-
+exec --no-startup-id nm-applet
 
 #exec --no-startup-id synapse
 #exec --no-startup-id guake
